@@ -386,7 +386,7 @@ export default function tiptap({
                 element: _this.$refs.element,
                 extensions: _this.getExtensions(),
                 editable: !_this.disabled,
-                content: content,
+                content: startsWithTitle && content === null ? '<h1></h1><p></p>' : content,
                 editorProps: {
                     handlePaste(view, event, slice) {
                         slice.content.descendants(node => {
