@@ -159,6 +159,8 @@ export default function tiptap({
    floatingMenuTools = [],
    placeholder = null,
    mergeTags = [],
+   startsWithTitle = false,
+   titlePlaceholder = null,
 }) {
     let editor = null;
 
@@ -183,7 +185,6 @@ export default function tiptap({
             })
 
             let extensions = [
-                Document,
                 Text,
                 Paragraph,
                 Dropcursor,
@@ -198,10 +199,39 @@ export default function tiptap({
                 StyleExtension,
                 StatePath.configure({
                     statePath: statePath
-                })
+                }),
             ];
 
-            if (placeholder && (!disabled)) {
+            if (startsWithTitle) {
+                const Title = Heading.extend({
+                    name: "title",
+                    group: "title",
+                    parseHTML: () => [{ tag: "h1:first-child" }],
+                }).configure({ levels: [1] });
+
+                extensions.push(
+                  Title,
+                  Placeholder.configure({
+                      showOnlyCurrent: false,
+                      placeholder: ({ node }) => {
+                          if (node.type.name === 'title') {
+                              return titlePlaceholder ?? 'Enter a title'
+                          }
+
+                          return placeholder ?? ""
+                      },
+                  }),
+                  Document.extend({
+                      content: 'title block*',
+                  }),
+                )
+            } else {
+                extensions.push(
+                  Document,
+                );
+            }
+
+            if (!startsWithTitle && placeholder && (!disabled)) {
                 extensions.push(Placeholder.configure({placeholder}));
             }
 
