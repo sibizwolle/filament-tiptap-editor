@@ -1,4 +1,23 @@
-# Filament Tiptap Editor
+<img width="500" alt="image" src="https://github.com/sibizwolle/tiptap-editor-playground/assets/3017676/968f228c-4e3e-4553-bb64-452b38dc88ad">
+
+# Sibi Fork documentatie
+De motivatie voor deze fork is terug te lezen in [deze PR](https://github.com/sibizwolle/sibi/pull/2723). Wellicht dat we deze fork zodanig kunnen inrichten dat het als PR naar de officiele package kan. Tot die tijd is het cruciaal dat we deze package blijven updaten, zodat we niet out of sync raken met de originele package.
+
+## [Sibi Feature] startsWithTitle
+
+Het is mogelijk om titel documenten te maken binnen Tiptap. Hiermee wordt geforceerd dat het document begint met een titel. Ook wordt er een placeholder getoond voor de titel en de eerste paragraaf:
+
+<img width="946" alt="image" src="https://github.com/user-attachments/assets/98c6b510-21f5-4e43-893a-c04701c7c56b">
+
+Om een titel document te maken, voeg je `->startsWithTitle()` toe aan je TiptapEditor. Je kunt de placeholder van de titel aanpassen middels `->titlePlaceholder()`.
+
+```
+TiptapEditor::make('content')
+    ->startsWithTitle()
+    ->titlePlaceholder('Schrijf een titel')
+```    
+
+# Filament Tiptap Editor (original readme)
 
 A Tiptap integration for Filament Admin/Forms.
 
