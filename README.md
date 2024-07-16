@@ -5,11 +5,11 @@ De motivatie voor deze fork is terug te lezen in [deze PR](https://github.com/si
 
 ## [Sibi Feature] startsWithTitle
 
-Het is mogelijk om titel documenten te maken binnen Tiptap. Hiermee wordt geforceerd dat het document begint met een titel. Ook wordt er een placeholder getoond voor de titel en de eerste paragraaf:
+Het is mogelijk om 'titeldocumenten' te maken binnen Tiptap. Hiermee wordt geforceerd dat het document begint met een titel. Ook wordt er een placeholder getoond voor de titel en de eerste paragraaf:
 
 <img width="946" alt="image" src="https://github.com/user-attachments/assets/98c6b510-21f5-4e43-893a-c04701c7c56b">
 
-Om een titel document te maken, voeg je `->startsWithTitle()` toe aan je TiptapEditor. Je kunt de placeholder van de titel aanpassen middels `->titlePlaceholder()`.
+Om een titeldocument te maken, voeg je `->startsWithTitle()` toe aan je TiptapEditor. Je kunt de placeholder van de titel aanpassen middels `->titlePlaceholder()`.
 
 ```
 TiptapEditor::make('content')
