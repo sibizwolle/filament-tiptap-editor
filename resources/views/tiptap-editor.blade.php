@@ -8,6 +8,8 @@
     $mergeTags = $getMergeTags();
     $shouldSupportBlocks = $shouldSupportBlocks();
     $shouldShowMergeTagsInBlocksPanel = $shouldShowMergeTagsInBlocksPanel();
+    $startsWithTitle = $getStartsWithTitle();
+    $titlePlaceholder = $getTitlePlaceholder();
 @endphp
 
 <x-dynamic-component
@@ -43,6 +45,8 @@
                         floatingMenuTools: @js($floatingMenuTools),
                         placeholder: @js($getPlaceholder()),
                         mergeTags: @js($mergeTags),
+                        startsWithTitle: @js($startsWithTitle),
+                        titlePlaceholder: @js($titlePlaceholder),
                     })"
                     x-init="$nextTick(() => { init() })"
                     x-on:click.away="blur()"
