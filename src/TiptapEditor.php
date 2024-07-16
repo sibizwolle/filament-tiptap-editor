@@ -13,6 +13,7 @@ use FilamentTiptapEditor\Actions\OEmbedAction;
 use FilamentTiptapEditor\Actions\SourceAction;
 use FilamentTiptapEditor\Concerns\CanStoreOutput;
 use FilamentTiptapEditor\Concerns\HasCustomActions;
+use FilamentTiptapEditor\Concerns\HasTitle;
 use FilamentTiptapEditor\Concerns\InteractsWithMedia;
 use FilamentTiptapEditor\Concerns\InteractsWithMenus;
 use Illuminate\Support\Js;
@@ -28,6 +29,7 @@ class TiptapEditor extends Field
     use HasExtraAlpineAttributes;
     use HasExtraInputAttributes;
     use HasPlaceholder;
+    use HasTitle;
     use InteractsWithMedia;
     use InteractsWithMenus;
 
