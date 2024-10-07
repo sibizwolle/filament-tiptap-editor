@@ -13,6 +13,8 @@ trait HasCustomActions
 
     public ?string $editMediaAction = null;
 
+    public ?string $gridBuilderAction = null;
+
     public function linkAction(string | Closure $action): static
     {
         $this->linkAction = $action;
@@ -51,6 +53,20 @@ trait HasCustomActions
     public function getEditMediaAction(): Action
     {
         $action = $this->evaluate($this->editMediaAction) ?? config('filament-tiptap-editor.edit_media_action');
+
+        return $action::make();
+    }
+
+    public function gridBuilderAction(string | Closure $action): static
+    {
+        $this->gridBuilderAction = $action;
+
+        return $this;
+    }
+
+    public function getGridBuilderAction(): Action
+    {
+        $action = $this->evaluate($this->gridBuilderAction) ?? config('filament-tiptap-editor.grid_builder_action');
 
         return $action::make();
     }
