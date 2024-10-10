@@ -80,7 +80,7 @@ return [
         'checked' => 'Aangevinkte lijst',
     ],
     'media' => [
-        'insert_edit' => 'Video invoegen / bewerken',
+        'insert_edit' => 'Media invoegen / bewerken',
         'edit' => 'Edit Media',
     ],
     'merge_tags' => [
