@@ -79,7 +79,10 @@ return [
         'ordered' => 'Geordende lijst',
         'checked' => 'Aangevinkte lijst',
     ],
-    'media' => 'Media invoegen / bewerken',
+    'media' => [
+        'insert_edit' => 'Video invoegen / bewerken',
+        'edit' => 'Edit Media',
+    ],
     'merge_tags' => [
         'panel' => 'Samenvoegtags',
     ],
