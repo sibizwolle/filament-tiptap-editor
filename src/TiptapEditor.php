@@ -516,6 +516,10 @@ class TiptapEditor extends Field
 
     public function mergeTags(array | Closure $mergeTags): static
     {
+        if (null !== array_keys($mergeTags)) {
+            $mergeTags = array_values($mergeTags);
+        }
+
         $this->mergeTags = $mergeTags;
 
         return $this;
